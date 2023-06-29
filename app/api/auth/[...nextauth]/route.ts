@@ -10,7 +10,7 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const res = await fetch("api/login", {
+        const res = await fetch("http://localhost:3000/api/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -28,7 +28,7 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    signIn: "/api/auth/signIn",
+    signIn: "/pages/auth/signIn",
   },
 });
 

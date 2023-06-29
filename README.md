@@ -10,5 +10,10 @@ pnpm i next-auth
 ```
 
 ```bash
+# .env
+DATABASE_URL=
+```
+
+```bash
 pnpm dev
 ```
