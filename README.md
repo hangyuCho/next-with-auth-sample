@@ -6,6 +6,7 @@ pnpm i @prisma/client
 npx prisma studio
 pnpm i bcrypt
 pnpm i --save-dev @types/bcrypt
+pnpm i next-auth
 ```
 
 ```bash

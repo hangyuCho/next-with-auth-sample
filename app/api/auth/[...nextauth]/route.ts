@@ -5,7 +5,11 @@ const handler = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Credentials",
-      async authorize(credentials, req) {
+      credentials: {
+        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
         const res = await fetch("api/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -23,4 +27,9 @@ const handler = NextAuth({
       },
     }),
   ],
+  pages: {
+    signIn: "/api/auth/signIn",
+  },
 });
+
+export { handler as GET, handler as POST };
